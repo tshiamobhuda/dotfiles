@@ -49,6 +49,9 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+    # Neovim config using Lazyvim distro
+    "./.config/nvim/".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/nvim";
   };
 
   # Home Manager can also manage your environment variables through
@@ -151,12 +154,12 @@
   programs.lazygit.enable = true;
 
   # Neovim
-  # programs.neovim = {
-  #     enable = true;
-  #     defaultEditor = true;
-  #     withNodeJs = true;
-  #     viAlias = true;
-  #     vimAlias = true;
-  #     vimdiffAlias = true;
-  # };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    withNodeJs = true;
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
+  };
 }
