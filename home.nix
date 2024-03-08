@@ -92,11 +92,11 @@
     userName = "Tshiamo Bhuda";
     userEmail = "tshiamobhuda@gmail.com";
     extraConfig = {
-        init.defaultBranch = "main";
-        core.editor = "nvim";
-        push.autoSetupRemote = true;
-        pull.rebase = false;
-      };
+      init.defaultBranch = "main";
+      core.editor = "nvim";
+      push.autoSetupRemote = true;
+      pull.rebase = false;
+    };
   };
 
   # Starship
@@ -115,13 +115,16 @@
         format = "[▓](#a3aed2)[ $symbol ]('')[ $percentage ](bg:#a3aed2 fg:#090c0c)";
         full_symbol = "󰁹";
         charging_symbol = "󱟦";
-        display = [{
-          threshold = 30;
-          discharging_symbol = "󱟥";
-        } {
-          threshold = 90;
-          discharging_symbol = "󱟤";
-        }];
+        display = [
+          {
+            threshold = 30;
+            discharging_symbol = "󱟥";
+          }
+          {
+            threshold = 90;
+            discharging_symbol = "󱟤";
+          }
+        ];
       };
 
       # directory plugin
