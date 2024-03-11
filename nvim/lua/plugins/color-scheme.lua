@@ -5,4 +5,8 @@ return {
       colorscheme = "catppuccin",
     },
   },
+  {
+    "floke/tokyonight.nvim",
+    enabled = false,
+  },
 }
