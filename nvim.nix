@@ -4,11 +4,19 @@
   home.packages = [
     # Nix LSP
     pkgs.nixd
+
+    # PHP
+    pkgs.php82
+    pkgs.php82Packages.composer
+    pkgs.phpactor
+
+    # Node
+    pkgs.nodejs_20
   ];
 
   home.file = {
     # Neovim config using Lazyvim distro
-    "./.config/nvim/".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/nvim";
+    "./.config/nvim/".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/home-manager/nvim-kickstart";
   };
 
   programs.vim.enable = true;

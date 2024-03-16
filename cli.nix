@@ -1,12 +1,20 @@
 { pkgs, lib, ... }:
 
 {
+  # === My Packages ===
+
+  # custom font
+  fonts.fontconfig.enable = true;
+
+  home.packages = [
+    # custom font
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
+
   # === Sourced files ===
-  home = {
-    file = {
+  home.file = {
       # wezterm config using lua
       "./.config/wezterm/".source = ./wezterm;
-    };
   };
 
   # === My Programs ===
@@ -19,7 +27,21 @@
       syntaxHighlighting.enable = true;
       initExtra = ''
         [[ ! $(command -v nix) && -e "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh" ]] && source "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
-      '';
+        '';
+      shellAliases = {
+        cat = "bat";
+      };
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "docker" "docker-compose" ];
+        extraConfig = ''
+          # ZSH AUTOCOMPLETE -> https://github.com/marlonrichert/zsh-autocomplete/blob/main/.zshrc
+          zstyle ':autocomplete:*' list-lines 8
+          zstyle ':autocomplete:history-search:*' list-lines 8
+          zstyle ':autocomplete:history-incremental-search-*:*' list-lines 8
+          zstyle ':autocomplete:*' insert-unambiguous yes
+          '';
+      };
     };
 
     # Starship
@@ -98,5 +120,6 @@
       enableZshIntegration = true;
     };
 
+    bat.enable = true;
   };
 }
