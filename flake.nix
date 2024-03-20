@@ -17,6 +17,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in
     {
+      defaultPackage.${system} = home-manager.defaultPackage.${system};
       homeConfigurations."tshiamobhuda" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
