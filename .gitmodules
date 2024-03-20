@@ -1,0 +1,3 @@
+[submodule "nvim-kickstart"]
+	path = nvim-kickstart
+	url = git@github.com:tshiamobhuda/kickstart-modular.nvim.git
