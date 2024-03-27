@@ -33,7 +33,6 @@
       };
       oh-my-zsh = {
         enable = true;
-        plugins = [ "docker" "docker-compose" ];
         extraConfig = ''
           # ZSH AUTOCOMPLETE -> https://github.com/marlonrichert/zsh-autocomplete/blob/main/.zshrc
           zstyle ':autocomplete:*' list-lines 8

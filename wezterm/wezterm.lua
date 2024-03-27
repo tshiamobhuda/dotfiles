@@ -10,9 +10,23 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- Settings
 config.color_scheme = "Catppuccin Frappe"
+
+-- Disables auto-reload since home-manager is maintiainig this file
+config.automatically_reload_config = false
+
+-- Winddow & Tab config
 config.use_fancy_tab_bar = false
--- config.window_decorations = "RESIZE"
+config.window_decorations = "RESIZE"
+config.window_close_confirmation = "AlwaysPrompt"
+config.macos_window_background_blur = 20
+config.window_background_opacity = 0.9
+
+wezterm.on("gui-startup", function(cmd)
+	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+	window:gui_window():maximize()
+end)
 
 -- and finally, return the configuration to wezterm
 return config
