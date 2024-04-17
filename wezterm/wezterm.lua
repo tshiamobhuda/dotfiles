@@ -18,15 +18,13 @@ config.automatically_reload_config = false
 
 -- Winddow & Tab config
 config.use_fancy_tab_bar = false
-config.window_decorations = "RESIZE"
+config.window_decorations = "TITLE | RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.macos_window_background_blur = 20
 config.window_background_opacity = 0.9
 
-wezterm.on("gui-startup", function(cmd)
-	local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
-	window:gui_window():maximize()
-end)
+-- Font config
+config.font_size = 13.2
 
 -- and finally, return the configuration to wezterm
 return config
