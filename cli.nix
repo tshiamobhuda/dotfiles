@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
   # === My Packages ===
@@ -40,6 +40,10 @@
           zstyle ':autocomplete:history-incremental-search-*:*' list-lines 8
           zstyle ':autocomplete:*' insert-unambiguous yes
           '';
+        plugins = [
+          "docker-compose"
+          "git"
+        ];
       };
     };
 

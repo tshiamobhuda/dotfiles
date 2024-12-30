@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 -- Settings
-config.color_scheme = "Catppuccin Frappe"
+config.color_scheme = "tokyonight_night"
 
 -- Disables auto-reload since home-manager is maintiainig this file
 config.automatically_reload_config = false

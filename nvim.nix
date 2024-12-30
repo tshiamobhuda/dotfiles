@@ -22,13 +22,17 @@
   programs.vim.enable = true;
 
   # Neovim
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    withNodeJs = true;
-    viAlias = true;
-    vimAlias = true;
-    vimdiffAlias = true;
+  programs = { 
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+      withNodeJs = true;
+      viAlias = true;
+      vimAlias = true;
+      vimdiffAlias = true;
+    };
+    fd.enable = true;
+    ripgrep.enable = true;
   };
 }
 
