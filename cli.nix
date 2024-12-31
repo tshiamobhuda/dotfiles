@@ -8,7 +8,8 @@
 
   home.packages = [
     # custom font
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    #(pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    pkgs.nerd-fonts.jetbrains-mono
   ];
 
   # === Sourced files ===
@@ -105,7 +106,7 @@
       enable = true;
       enableZshIntegration = true;
       git = true;
-      icons = true;
+      icons = "auto";
     };
 
     # Ffz
