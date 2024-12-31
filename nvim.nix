@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = [
@@ -6,8 +6,8 @@
     pkgs.nixd
 
     # PHP
-    pkgs.php82
-    pkgs.php82Packages.composer
+    pkgs.php84
+    pkgs.php84Packages.composer
     pkgs.phpactor
 
     # Node
